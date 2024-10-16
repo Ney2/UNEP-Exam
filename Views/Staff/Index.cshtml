@@ -1,0 +1,36 @@
+@model IEnumerable<StaffPortal.Models.Staff>
+
+    <h2>Staff List</h2>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Index Number</th>
+                <th>Full Names</th>
+                <th>Email</th>
+                <th>Current Location</th>
+                <th>Highest Level Of Education</th>
+                <th>Duty Station</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var staff in Model)
+        {
+            <tr>
+                <td>@staff.IndexNumber</td>
+                <td>@staff.FullNames</td>
+                <td>@staff.Email</td>
+                <td>@staff.CurrentLocation</td>
+                <td>@staff.HighestLevelOfEducation</td>
+                <td>@staff.DutyStation</td>
+                <td>
+                    <a href="/Staff/Edit/@staff.IndexNumber">Edit</a> |
+                    <a href="/Staff/Delete/@staff.IndexNumber">Delete</a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+
+    <a class="btn btn-primary" href="/Staff/Create">Add New Staff</a>

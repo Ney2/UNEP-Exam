@@ -1,0 +1,111 @@
+@model StaffPortal.Models.Staff
+
+<h2>Create Staff</h2>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label for="IndexNumber">Index Number</label>
+        <input type="text" class="form-control" asp-for="IndexNumber" required />
+        <span asp-validation-for="IndexNumber" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="FullNames">Full Names</label>
+        <input type="text" class="form-control" asp-for="FullNames" required />
+        <span asp-validation-for="FullNames" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="Email">Email</label>
+        <input type="email" class="form-control" asp-for="Email" required />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="CurrentLocation">Current Location</label>
+        <input type="text" class="form-control" asp-for="CurrentLocation" />
+        <span asp-validation-for="CurrentLocation" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="HighestLevelOfEducation">Highest Level Of Education</label>
+        <select class="form-control" asp-for="HighestLevelOfEducation">
+            <option value="">Select Education Level</option>
+            <option value="High School">High School</option>
+            <option value="Bachelors">Bachelor's</option>
+            <option value="Masters">Master's</option>
+            <option value="PhD">PhD</option>
+        </select>
+        <span asp-validation-for="HighestLevelOfEducation" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="DutyStation">Duty Station</label>
+        <select class="form-control" asp-for="DutyStation">
+            <option value="">Select Duty Station</option>
+            <option value="Headquarters">Headquarters</option>
+            <option value="Field Office">Field Office</option>
+            <option value="Regional Office">Regional Office</option>
+        </select>
+        <span asp-validation-for="DutyStation" class="text-danger"></span>
+    </div>
+
+    <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" asp-for="AvailabilityForRemoteWork" />
+        <label class="form-check-label" for="AvailabilityForRemoteWork">Available for Remote Work</label>
+    </div>
+
+    <div class="form-group">
+        <label for="SoftwareExpertise">Software Expertise</label>
+        <select class="form-control" asp-for="SoftwareExpertise">
+            <option value="">Select Software Expertise</option>
+            <option value="Python">Python</option>
+            <option value="Java">Java</option>
+            <option value="PHP">PHP</option>
+            <option value="C#">C#</option>
+        </select>
+        <span asp-validation-for="SoftwareExpertise" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="SoftwareExpertiseLevel">Software Expertise Level</label>
+        <select class="form-control" asp-for="SoftwareExpertiseLevel">
+            <option value="">Select Expertise Level</option>
+            <option value="Beginner">Beginner</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Expert">Expert</option>
+        </select>
+        <span asp-validation-for="SoftwareExpertiseLevel" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="Language">Language</label>
+        <select class="form-control" asp-for="Language">
+            <option value="">Select Language</option>
+            <option value="English">English</option>
+            <option value="French">French</option>
+            <option value="Spanish">Spanish</option>
+            <option value="Arabic">Arabic</option>
+            <option value="Mandarin">Mandarin</option>
+        </select>
+        <span asp-validation-for="Language" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="LevelOfResponsibility">Level of Responsibility</label>
+        <select class="form-control" asp-for="LevelOfResponsibility">
+            <option value="">Select Responsibility Level</option>
+            <option value="Junior Staff">Junior Staff</option>
+            <option value="Senior Staff">Senior Staff</option>
+            <option value="Manager">Manager</option>
+            <option value="Director">Director</option>
+        </select>
+        <span asp-validation-for="LevelOfResponsibility" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
