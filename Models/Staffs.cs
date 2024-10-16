@@ -29,5 +29,6 @@ namespace StaffPortal.Models
         public string Language { get; set; }
 
         public string LevelOfResponsibility { get; set; }
+
     }
 }
